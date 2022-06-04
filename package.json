@@ -1,0 +1,29 @@
+{
+  "name": "pkg-prebuilds",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Julian Waller",
+    "email": "git@julusian.co.uk",
+    "url": "https://github.com/julusian"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/julusian/pkg-prebuilds.git"
+  },
+  "bin": {
+    "pkg-prebuilds-copy": "./bin/copy.mjs",
+    "pkg-prebuilds-verify": "./bin/verify.mjs"
+  },
+  "engines": {
+    "node": ">= 14.15.0"
+  },
+  "files": [
+    "bindings.js",
+    "bindings.d.ts",
+    "bin",
+    "lib",
+    "*.md"
+  ]
+}
