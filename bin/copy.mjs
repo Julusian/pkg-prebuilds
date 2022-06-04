@@ -83,13 +83,15 @@ const prebuildName = getPrebuildName({
     runtime: argv.runtime || 'node'
 })
 
+const destFile = path.join(targetDir, prebuildName)
+const destDir = path.dirname(destFile)
+
 // Make sure the directory exists
-if (!fs.existsSync(targetDir)) {
-    fs.mkdirSync(targetDir, { recursive: true })
+if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir, { recursive: true })
 }
 
 // Copy the bindings file
-const destFile = path.join(targetDir, prebuildName)
 fs.copyFileSync(sourceFile, destFile)
 
 if (argv.strip) {
