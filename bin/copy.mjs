@@ -15,7 +15,7 @@ const require = createRequire(import.meta.url)
 const version = require("../package").version;
 
 const yargs = require("yargs")
-    .usage("CMake.js " + version + "\n\nUsage: $0 [<command>] [options]")
+    .usage("pkg-prebuilds " + version + "\n\nUsage: $0 [<command>] [options]")
     .version(version)
     .options({
         source: {
@@ -39,7 +39,7 @@ const yargs = require("yargs")
             type: 'string'
         },
         napi_version: {
-            demand: false,
+            demand: true,
             describe: 'node-api version',
             type: 'string'
         },

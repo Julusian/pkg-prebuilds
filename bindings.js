@@ -14,10 +14,10 @@ const runtimeRequire = typeof __webpack_require__ === 'function' ? __non_webpack
  * @returns 
  */
 function resolvePath(basePath, options, verifyPrebuild) {
-    if (typeof basePath !== 'string' || !basePath) throw new Error(`Invalid basePath to cmake-js/bindings`)
+    if (typeof basePath !== 'string' || !basePath) throw new Error(`Invalid basePath to pkg-prebuilds`)
 
-    if (typeof options !== 'object' || !options) throw new Error(`Invalid options to cmake-js/bindings`)
-    if (typeof options.name !== 'string' || !options.name) throw new Error(`Invalid name to cmake-js/bindings`)
+    if (typeof options !== 'object' || !options) throw new Error(`Invalid options to pkg-prebuilds`)
+    if (typeof options.name !== 'string' || !options.name) throw new Error(`Invalid name to pkg-prebuilds`)
     
     let isNodeApi = false
     if (options.napi_versions && Array.isArray(options.napi_versions)) {

@@ -1,7 +1,7 @@
 {
   "name": "pkg-prebuilds",
-  "version": "0.0.2",
-  "main": "index.js",
+  "version": "0.1.0-0",
+  "main": "bindings.js",
   "license": "MIT",
   "author": {
     "name": "Julian Waller",
@@ -25,5 +25,8 @@
     "bin",
     "lib",
     "*.md"
-  ]
+  ],
+  "dependencies": {
+    "yargs": "^17.5.1"
+  }
 }
