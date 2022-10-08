@@ -28,14 +28,16 @@ function resolvePath(basePath, options, verifyPrebuild) {
     const platform = (verifyPrebuild && process.env.npm_config_platform) || os.platform()
     
     let runtime = 'node'
-    if (verifyPrebuild && process.env.npm_config_runtime) {
-        runtime = process.env.npm_config_runtime
-    } else if (isElectron()) {
-        runtime = 'electron'
-    } else if (isNwjs()) {
-        runtime = 'node-webkit'
+    // If node-api, then everything can share the same binary
+    if (!isNodeApi) {
+        if (verifyPrebuild && process.env.npm_config_runtime) {
+            runtime = process.env.npm_config_runtime
+        } else if (isElectron()) {
+            runtime = 'electron'
+        } else if (isNwjs()) {
+            runtime = 'node-webkit'
+        }
     }
-    if (runtime === 'electron' && isNodeApi) runtime = 'node'
 
     const candidates = []
     
