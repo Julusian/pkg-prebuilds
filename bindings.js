@@ -3,7 +3,7 @@ const os = require('os')
 const { getPrebuildName, isNwjs, isElectron, isAlpine } = require('./lib/prebuild')
 
 // Jest can allow users to mock 'fs', but we need the real fs
-const fs = jest ? jest.requireActual('fs') : require('fs')
+const fs = typeof jest !== 'undefined' ? jest.requireActual('fs') : require('fs')
 
 // Workaround to fix webpack's build warnings: 'the request of a dependency is an expression'
 const runtimeRequire = typeof __webpack_require__ === 'function' ? __non_webpack_require__ : require // eslint-disable-line
