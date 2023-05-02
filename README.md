@@ -39,9 +39,10 @@ There are a few components to this library as follows.
 
 Copy a prebuilt binary into the prebuilds folder.
 
-Example: `pkg-prebuilds-copy --source build/Release/jpeg-turbo.node --name=jpeg-turbo --strip  --napi_version=7 --arch=x64`
+Example: `pkg-prebuilds-copy --baseDir build/Release --source jpeg-turbo.node --name=jpeg-turbo --strip  --napi_version=7 --arch=x64`
 
 This takes a few paramaters to figure out the correct filename:
+* `baseDir` - Base path to built binary files (required)
 * `source` - The built file to copy (required)
 * `name` - The name of the binding as defined in the options object (required)
 * `napi_version` - The node-api version it was built for (required)
@@ -50,6 +51,7 @@ This takes a few paramaters to figure out the correct filename:
 * `runtime` - The runtime it was built for (node, electron, nwjs) (default: node)
 * `arch` - The architecture it was built for (x64, arm64 etc) (default: current process arch)
 * `platform` - The platform it was built for (win32, linux, darwin) (default: current process platform)
+* `extraFiles` - Extra files to be copied, typically so/dll/dylib files that must reside next to the `.node` file
 
 ### pkg-prebuilds-verify
 
