@@ -93,7 +93,7 @@ This is to allow for supplying the new `--extraFiles` parameter which is also re
 Additionally, `node-gyp-build` is clever about detecting the correct file for you, but this does not work well if it gets bundled with `webpack`, `pkg` or alternatives. Because the prebuilds are not named with the package they are for, it is very hard to make them coexist after bundling.
 
 This is written to be simple. It doesnt try to do any magic, it simply copies files into an organised structure and then provides a way of loading the correct one. 
-It expects callers to provide any information it may needed, rather than it trying to figure it out. While this is more difficult for developers using this library, it has a minimal cost and helps ensure it will work consistently for all users.
+It expects callers to provide any information it may need, rather than it trying to figure it out. While this is more effort for developers using this library, it has a minimal cost and helps ensure it will work consistently for all users.
 
 
 ## License
