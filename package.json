@@ -27,6 +27,6 @@
     "*.md"
   ],
   "dependencies": {
-    "yargs": "^17.5.1"
+    "yargs": "^17.7.2"
   }
 }

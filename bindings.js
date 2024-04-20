@@ -13,9 +13,10 @@ const runtimeRequire = typeof __webpack_require__ === 'function' ? __non_webpack
  * @param {string} basePath - Base path of the module, where binaries will be located
  * @param {object} options - Describe how the prebuilt binary is named
  * @param {boolean} verifyPrebuild - True if we are verifying that a prebuild exists
+ * @param {boolean} throwOnMissing - True if an error should be thrown when the binary is missing
  * @returns
  */
-function resolvePath(basePath, options, verifyPrebuild) {
+function resolvePath(basePath, options, verifyPrebuild, throwOnMissing) {
 	if (typeof basePath !== 'string' || !basePath) throw new Error(`Invalid basePath to pkg-prebuilds`)
 
 	if (typeof options !== 'object' || !options) throw new Error(`Invalid options to pkg-prebuilds`)
@@ -85,12 +86,18 @@ function resolvePath(basePath, options, verifyPrebuild) {
 		}
 	}
 
+	if (!foundPath && throwOnMissing) {
+		const candidatesStr = candidates.map((cand) => ` - ${cand}`).join('\n')
+		throw new Error(`Failed to find binding for ${options.name}\nTried paths:\n${candidatesStr}`)
+	}
+
 	return foundPath
 }
 
 function loadBinding(basePath, options) {
-	const foundPath = resolvePath(basePath, options)
+	const foundPath = resolvePath(basePath, options, false, true)
 
+	// Note: this error should not be hit, as resolvePath will throw if the binding is missing
 	if (!foundPath) throw new Error(`Failed to find binding for ${options.name}`)
 
 	return runtimeRequire(foundPath)
