@@ -1,6 +1,6 @@
 {
   "name": "pkg-prebuilds",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "bindings.js",
   "license": "MIT",
   "author": {
