@@ -1,11 +1,10 @@
 # pkg-prebuilds
 
+An opionated lightweight alternative to [node-gyp-build](https://www.npmjs.com/package/node-gyp-build) & [prebuildify](https://www.npmjs.com/package/prebuildify), that is build tooling agnostic.
+
 [![npm](https://img.shields.io/npm/v/pkg-prebuilds.svg)](https://www.npmjs.com/package/pkg-prebuilds)
 [![npm](https://img.shields.io/npm/dm/pkg-prebuilds.svg)](https://www.npmjs.com/package/pkg-prebuilds)
 [![npm](https://img.shields.io/npm/l/pkg-prebuilds.svg)](LICENSE)
-
-An opionated lightweight alternative to [node-gyp-build](https://www.npmjs.com/package/node-gyp-build) & [prebuildify](https://www.npmjs.com/package/prebuildify), that is build tooling agnostic.
-
 
 ## Usage
 
