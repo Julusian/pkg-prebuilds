@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/julusian/pkg-prebuilds.git"
+    "url": "git://github.com/Julusian/pkg-prebuilds.git"
   },
   "bin": {
     "pkg-prebuilds-copy": "./bin/copy.mjs",
